@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyline Run — a complete flight game</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="scene"></canvas>
+  <canvas id="hud"></canvas>
+  <div id="banner" class="hidden"></div>
+  <div id="menu" class="panel">
+    <h1>SKYLINE RUN</h1>
+    <p class="tag">Fly the Kestrel over Coral Bay. Thread the rings. Bring her home.</p>
+    <div class="missions">
+      <button class="mission" data-mission="rings">
+        <b>Ring Run</b><span>8 rings &middot; race the clock</span>
+      </button>
+      <button class="mission" data-mission="tour">
+        <b>Island Tour</b><span>12 rings &middot; mind your fuel</span>
+      </button>
+      <button class="mission" data-mission="landing">
+        <b>Landing Challenge</b><span>3 rings, then grease the runway</span>
+      </button>
+    </div>
+    <div class="controls">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> pitch</span>
+      <span><kbd>&larr;</kbd><kbd>&rarr;</kbd> bank &amp; turn</span>
+      <span><kbd>W</kbd>/<kbd>S</kbd> throttle</span>
+      <span><kbd>G</kbd> gear</span>
+      <span><kbd>C</kbd> camera</span>
+      <span><kbd>P</kbd> pause</span>
+      <span><kbd>R</kbd> reset</span>
+      <span><kbd>M</kbd> sound</span>
+      <span>drag mouse to look</span>
+    </div>
+    <p class="foot">A complete original flight game. No network, no downloads — it flies from these files alone.</p>
+  </div>
+  <div id="over" class="panel hidden">
+    <h1 id="overTitle">MISSION COMPLETE</h1>
+    <p id="overText"></p>
+    <div id="overStats"></div>
+    <button id="againBtn">Fly again</button>
+    <button id="menuBtn">Choose mission</button>
+  </div>
+  <div id="toast" class="hidden"></div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

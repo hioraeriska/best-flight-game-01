@@ -1,0 +1,64 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #0b1622; }
+body { font-family: "Segoe UI", Verdana, sans-serif; color: #eaf4ff; }
+#stage { position: fixed; inset: 0; }
+#scene, #hud { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#hud { pointer-events: none; }
+.hidden { display: none !important; }
+
+.panel {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(620px, 92vw); padding: 28px 32px 22px; text-align: center;
+  background: linear-gradient(160deg, rgba(8, 24, 42, 0.92), rgba(10, 38, 60, 0.88));
+  border: 1px solid rgba(120, 210, 255, 0.45); border-radius: 14px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 18px 60px rgba(0, 0, 0, 0.55),
+    inset 0 0 42px rgba(40, 140, 220, 0.12);
+  backdrop-filter: blur(3px);
+}
+.panel h1 {
+  font-size: 44px; letter-spacing: 6px; font-weight: 800;
+  color: #bfe9ff; text-shadow: 0 0 18px rgba(90, 200, 255, 0.85), 0 2px 0 rgba(0,0,0,0.6);
+}
+.panel .tag { margin: 8px 0 18px; color: #9fd4ef; font-size: 15px; }
+.missions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.mission {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 12px 18px; cursor: pointer; text-align: left;
+  background: rgba(24, 90, 140, 0.35); color: #eaf4ff;
+  border: 1px solid rgba(120, 210, 255, 0.4); border-radius: 9px;
+  font-size: 16px; transition: background 0.15s, transform 0.15s;
+}
+.mission:hover { background: rgba(50, 150, 220, 0.5); transform: translateY(-1px); }
+.mission b { font-size: 18px; letter-spacing: 1px; }
+.mission span { color: #a8d8f2; font-size: 13px; }
+.controls {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px;
+  font-size: 13px; color: #b9d9ec; margin-bottom: 12px;
+}
+.controls kbd {
+  display: inline-block; padding: 1px 7px; margin: 0 1px;
+  background: #12324a; border: 1px solid #4d9ecf; border-bottom-width: 2px;
+  border-radius: 5px; color: #dff3ff; font-family: inherit; font-size: 12px;
+}
+.foot { font-size: 12px; color: #7fa8c2; }
+#overStats { margin: 14px 0 18px; font-size: 16px; line-height: 1.7; color: #cfeaff; }
+#overText { margin-top: 8px; color: #a8d8f2; font-size: 15px; }
+#againBtn, #menuBtn {
+  padding: 11px 22px; margin: 4px 6px 0; cursor: pointer; font-size: 16px; font-weight: 700;
+  color: #04121f; background: linear-gradient(180deg, #8fdcff, #3fa9e0);
+  border: 1px solid #bfe9ff; border-radius: 8px;
+}
+#menuBtn { background: linear-gradient(180deg, #d7e6ef, #9fb8c8); }
+#banner {
+  position: absolute; left: 50%; top: 16%; transform: translateX(-50%);
+  padding: 10px 26px; font-size: 30px; font-weight: 800; letter-spacing: 3px;
+  color: #ffe9a8; text-shadow: 0 0 16px rgba(255, 190, 60, 0.9), 0 2px 0 rgba(0,0,0,0.7);
+  background: rgba(8, 20, 34, 0.55); border: 1px solid rgba(255, 210, 110, 0.5);
+  border-radius: 10px; pointer-events: none; white-space: nowrap;
+}
+#toast {
+  position: absolute; left: 50%; top: 25%; transform: translateX(-50%);
+  padding: 8px 20px; font-size: 17px; font-weight: 600; color: #dff3ff;
+  background: rgba(8, 24, 42, 0.8); border: 1px solid rgba(120, 210, 255, 0.4);
+  border-radius: 8px; pointer-events: none; white-space: nowrap;
+}
